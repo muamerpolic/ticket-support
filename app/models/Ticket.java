@@ -4,6 +4,7 @@ import java.util.*;
 import javax.persistence.*;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import play.data.format.*;
 import play.data.validation.*;
 import sun.misc.Contended;
@@ -25,11 +26,10 @@ public class Ticket extends Model{
     @Constraints.Required
     public String description;
 
-    @Constraints.Required
     public boolean inProgress;
 
     @ManyToOne
-    @JsonIgnore
+    @JsonManagedReference
     public User user;
 
     public Ticket(User user, String description, String title) {
