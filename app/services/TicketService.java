@@ -23,6 +23,13 @@ public class TicketService {
         return model;
     }
 
+    public Ticket changeProgress(Ticket model){
+        if (model.inProgress) model.inProgress = false;
+        else model.inProgress = true;
+        Ebean.update(model);
+        return model;
+    }
+
     public Ticket GetTicket(long ticketId){
         return Ticket.find.byId(ticketId);
     }
