@@ -17,11 +17,10 @@ public class TicketService {
         Ticket toDelete = Ticket.find.byId(ticketId);
         Ebean.delete(toDelete);
     }
-    public Ticket Update (Ticket model){
-        Ticket newTicket = Ticket.find.byId(model.Id);
-        newTicket = model;
-        Ebean.update(newTicket);
-        return newTicket;
+    public Ticket Update (Ticket model, long ticketId){
+        model.Id = ticketId;
+        Ebean.update(model);
+        return model;
     }
 
     public Ticket GetTicket(long ticketId){
