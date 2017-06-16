@@ -1,25 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>TicketSupport</title>
+    <title>Login and Register</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png">
 </head>
 <body>
-    <h1>Welcome to Ticket Support</h1>
-    <h2> Create a User</h2>
+    <h1> Register </h1>
     <form method="post" action="users">
         <input type="text" name="emailAdress" /><br/>
-        <input type="password" name="password" /><br/>
-        <input type="text" name="fullName"/><br/>
+        <input type="password" name ="password" /> <br/>
+        <input type="text" name="fullName" /><br/>
         <input type="submit" value="create user" />
     </form>
 
-    <br/><br/>
-    <h2>Create a Ticket for User with ID 1</h2>
+
+
+    <h1> Log in </h1>
+    <form method="post" action="login">
+        <input type="text" name="emailAddress" /><br/>
+        <input type="password" name ="password" /> <br/>
+        <input type="submit" value="log in" />
+    </form>
+    <br/>
+
+    <h1>Get Tickets</h1>
+    <form method="get" action="tickets">
+        <input type="submit" value="get tickets for logged in user" />
+    </form>
+
+    <h1>Create ticket</h1>
     <form method="post" action="tickets">
         <input type="text" name="title" /><br/>
-        <input type="password" name="description" /><br/>
+        <input type="text" name ="description" /> <br/>
         <input type="submit" value="create ticket" />
     </form>
+
+    <h1>Log out</h1>
+    <form method="post" action="logout">
+        <input type="submit" value ="logout"/>
+    </form>
+
 </body>
 </html>
