@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.validation.Constraint;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import play.data.format.*;
 import play.data.validation.*;
 import sun.misc.Contended;
@@ -45,7 +46,7 @@ public class User extends Model{
     public String fullName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    @JsonIgnore
+    @JsonBackReference
     public List<Ticket> tickets = new ArrayList<Ticket>();
 
 
