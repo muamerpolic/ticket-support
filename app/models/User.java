@@ -3,17 +3,12 @@ package models;
 import java.util.*;
 import javax.persistence.*;
 import javax.validation.Constraint;
-
 import com.avaje.ebean.Model;
 import play.data.format.*;
 import play.data.validation.*;
 import sun.misc.Contended;
 import com.avaje.ebean.annotation.JsonIgnore;
 
-
-/**
- * Created by muamerpolic on 6/15/17.
- */
 @Entity
 public class User extends Model{
 
@@ -24,9 +19,11 @@ public class User extends Model{
     @Constraints.Email
     public String emailAdress;
     public String getEmailAdress(){
+
         return emailAdress;
     }
     public void setEmailAddress(String emailAddress) {
+
         this.emailAdress = emailAddress;
     }
 
@@ -35,11 +32,15 @@ public class User extends Model{
     public String password;
 
     public String getPassword(){
+
         return password;
     }
     public void setPassword(String password){
+
         this.password = password;
     }
+
+    public static Finder<Long, User> find = new Finder<Long,User>(User.class);
 
     @Constraints.Required
     public String fullName;
@@ -54,6 +55,4 @@ public class User extends Model{
         setPassword(password);
         this.fullName = fullName;
     }
-
-    public static Finder<Long, User> find = new Finder<Long,User>(User.class);
 }

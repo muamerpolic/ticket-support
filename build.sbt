@@ -2,7 +2,7 @@ name := """ticket-support"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val myProject = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
+lazy val ticketSupport = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
 
 scalaVersion := "2.11.7"
 
